@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.brgweb.brgactivities">
 
@@ -8,6 +9,38 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/GMapsKey" />
+
+        <activity
+            android:name=".POIMap"
+            android:label="@string/title_activity_poimap">
+            <intent-filter>
+                <!-- launcher -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Index Google Search -->
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "https://oneo.mobi/samplecode/POIMap” -->
+                <data
+                    android:host="oneo.mobi"
+                    android:pathPrefix="/samplecode/POIMap"
+                    android:scheme="https" />
+                <!-- Accepts URIs that begin with "oneosample://POIMap” -->
+                <data
+                    android:host="POIMap"
+                    android:scheme="oneosample" />
+            </intent-filter>
+        </activity>
     </application>
+
 
 </manifest>
